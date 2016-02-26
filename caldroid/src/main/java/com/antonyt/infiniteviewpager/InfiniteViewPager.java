@@ -5,7 +5,6 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.view.View;
 
 import java.util.ArrayList;
 
@@ -110,6 +109,11 @@ public class InfiniteViewPager extends ViewPager {
 	 * 
 	 * Thanks Delyan for his brilliant code
 	 */
+	/*
+	*
+	* This was causing scrolling issues. Since its height was fixed even if it didn't fit on the
+	* viewport, the lowest row was considered to be displayed, thus AbsListView didn't scroll.
+	*
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -148,6 +152,6 @@ public class InfiniteViewPager extends ViewPager {
 				MeasureSpec.EXACTLY);
 
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-	}
+	}*/
 
 }
